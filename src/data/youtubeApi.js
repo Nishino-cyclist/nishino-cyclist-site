@@ -20,12 +20,6 @@ const getApiKey = () => {
     // APIキーを直接指定（Vercelの環境変数問題回避のため）
     const apiKey = 'AIzaSyCSn4JijN5f10opuDE2F7rJvNsRcarpCOQ';
 
-    // デバッグ用ログ
-    console.log('--- Debug Info ---');
-    console.log('Using hardcoded API Key');
-    console.log('API Key length:', apiKey.length);
-    console.log('------------------');
-
     return apiKey;
 };
 
