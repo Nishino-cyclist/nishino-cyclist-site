@@ -48,8 +48,33 @@ function App() {
     loadVideos();
   }, []);
 
+  // デバッグ用（あとで消します）
+  const apiKey = import.meta.env.VITE_YOUTUBE_API_KEY;
+  const debugInfo = {
+    exists: !!apiKey,
+    length: apiKey ? apiKey.length : 0,
+    firstChar: apiKey ? apiKey.substring(0, 3) + '...' : 'none'
+  };
+
   return (
     <div className="app">
+      {/* デバッグバナー */}
+      <div style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        zIndex: 9999,
+        background: 'rgba(0,0,0,0.8)',
+        color: '#fff',
+        padding: '10px',
+        fontSize: '12px',
+        pointerEvents: 'none'
+      }}>
+        API Key: {debugInfo.exists ? '✅ PRESENT' : '❌ MISSING'}<br />
+        Length: {debugInfo.length}<br />
+        Value: {debugInfo.firstChar}
+      </div>
+
       {/* ヘッダー（固定ナビゲーション） */}
       <Header />
 
