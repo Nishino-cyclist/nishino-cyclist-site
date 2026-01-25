@@ -1,0 +1,96 @@
+/* ========================================
+   アクティビティリンクセクションのスタイル
+   ======================================== */
+
+.activity-section {
+    background: var(--color-bg-primary);
+}
+
+.activity-section__subtitle {
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-xl);
+    font-size: 1.1rem;
+}
+
+/* リンクグリッド */
+.activity-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+}
+
+/* アクティビティカード */
+.activity-card {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg);
+    background: var(--color-bg-card);
+    border-radius: var(--border-radius-md);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    transition: all var(--transition-normal);
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+}
+
+.activity-card:hover {
+    transform: translateX(10px);
+    background: var(--gradient-card);
+    border-color: var(--accent-color, var(--color-primary));
+    box-shadow: 0 0 30px rgba(255, 152, 0, 0.2);
+}
+
+/* アイコン */
+.activity-card__icon {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 152, 0, 0.1);
+    border-radius: var(--border-radius-md);
+    color: var(--accent-color, var(--color-primary));
+    transition: all var(--transition-fast);
+}
+
+.activity-card:hover .activity-card__icon {
+    background: var(--accent-color, var(--color-primary));
+    color: var(--color-bg-primary);
+    transform: scale(1.1);
+}
+
+/* 情報 */
+.activity-card__info {
+    flex: 1;
+}
+
+.activity-card__name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.activity-card__description {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+}
+
+/* 矢印 */
+.activity-card__arrow {
+    flex-shrink: 0;
+    color: var(--color-text-muted);
+    transition: all var(--transition-fast);
+}
+
+.activity-card:hover .activity-card__arrow {
+    color: var(--color-primary);
+    transform: translateX(5px);
+}
+
+/* レスポンシブ */
+@media (min-width: 768px) {
+    .activity-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

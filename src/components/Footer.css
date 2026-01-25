@@ -1,0 +1,134 @@
+/* ========================================
+   フッターのスタイル
+   ======================================== */
+
+.footer {
+    background: var(--color-bg-secondary);
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    padding: var(--spacing-xl) 0 var(--spacing-lg);
+}
+
+.footer__main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+}
+
+/* ブランド */
+.footer__brand {
+    text-align: center;
+}
+
+.footer__logo {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-xs);
+}
+
+.footer__logo-icon {
+    color: var(--color-primary);
+}
+
+.footer__tagline {
+    color: var(--color-text-muted);
+}
+
+/* リンク */
+.footer__links {
+    text-align: center;
+}
+
+.footer__links-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-primary);
+}
+
+.footer__links-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    justify-content: center;
+}
+
+.footer__links-list a {
+    color: var(--color-text-secondary);
+    transition: color var(--transition-fast);
+}
+
+.footer__links-list a:hover {
+    color: var(--color-primary);
+}
+
+/* SNS */
+.footer__social {
+    text-align: center;
+}
+
+.footer__social-icons {
+    display: flex;
+    gap: var(--spacing-sm);
+    justify-content: center;
+}
+
+.footer__social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 152, 0, 0.1);
+    border-radius: var(--border-radius-sm);
+    color: var(--color-text-secondary);
+    transition: all var(--transition-fast);
+}
+
+.footer__social-link:hover {
+    background: var(--color-primary);
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* コピーライト */
+.footer__bottom {
+    text-align: center;
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+}
+
+.footer__heart {
+    display: inline-block;
+    color: #ff6b6b;
+    animation: pulse 1s ease-in-out infinite;
+}
+
+/* レスポンシブ */
+@media (min-width: 768px) {
+    .footer__main {
+        grid-template-columns: 2fr 1fr 1fr;
+        text-align: left;
+    }
+
+    .footer__brand,
+    .footer__links,
+    .footer__social {
+        text-align: left;
+    }
+
+    .footer__links-list,
+    .footer__social-icons {
+        justify-content: flex-start;
+    }
+
+    .footer__links-list {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+}
