@@ -18,6 +18,14 @@ let cachedChannelId = null;
  */
 const getApiKey = () => {
     const apiKey = import.meta.env.VITE_YOUTUBE_API_KEY;
+
+    // デバッグ用ログ
+    console.log('--- Debug Info ---');
+    console.log('VITE_YOUTUBE_API_KEY exists:', !!apiKey);
+    console.log('API Key length:', apiKey ? apiKey.length : 0);
+    console.log('ENV keys:', Object.keys(import.meta.env).filter(k => k.startsWith('VITE_')));
+    console.log('------------------');
+
     if (!apiKey) {
         console.warn('YouTube API key not found. Using mock data.');
         return null;
