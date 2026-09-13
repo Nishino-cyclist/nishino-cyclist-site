@@ -13,6 +13,7 @@ import Footer from './components/Footer';
 import { fetchPlaylistVideos, fetchLatestVideos } from './data/youtubeApi';
 import { latestVideos as mockLatest } from './data/videos';
 import './index.css';
+import './studio-theme.css';
 
 // にしのちゃんのプレイリストID
 const FEATURED_PLAYLIST_ID = 'PLMecUOCOI5uF7283P-gMGNCyZegzPz6IU';
