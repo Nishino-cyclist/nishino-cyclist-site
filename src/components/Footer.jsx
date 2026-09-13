@@ -29,7 +29,7 @@ function Footer() {
                         <ul className="footer__links-list">
                             <li><a href="#home">ホーム</a></li>
                             <li><a href="#latest">最新動画</a></li>
-                            <li><a href="#popular">人気動画</a></li>
+                            <li><a href="#playlist">おすすめ動画</a></li>
                             <li><a href="#links">各種リンク</a></li>
                         </ul>
                     </div>

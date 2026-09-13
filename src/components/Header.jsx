@@ -26,7 +26,7 @@ function Header() {
     const navLinks = [
         { href: '#home', label: 'ホーム' },
         { href: '#latest', label: '最新動画' },
-        { href: '#popular', label: '人気動画' },
+        { href: '#playlist', label: 'おすすめ' },
         { href: '#links', label: 'リンク' }
     ];
 
@@ -70,13 +70,15 @@ function Header() {
                     className="header__mobile-toggle"
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                     aria-label="メニュー"
+                    aria-expanded={isMobileMenuOpen}
+                    aria-controls="mobile-navigation"
                 >
                     {isMobileMenuOpen ? <X /> : <Menu />}
                 </button>
             </div>
 
             {/* モバイルメニュー */}
-            <div className={`header__mobile-menu ${isMobileMenuOpen ? 'header__mobile-menu--open' : ''}`}>
+            <div id="mobile-navigation" inert={!isMobileMenuOpen} className={`header__mobile-menu ${isMobileMenuOpen ? 'header__mobile-menu--open' : ''}`}>
                 <nav className="header__mobile-nav">
                     <ul className="header__mobile-nav-list">
                         {navLinks.map((link) => (
